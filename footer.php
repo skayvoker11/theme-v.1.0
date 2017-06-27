@@ -1,5 +1,6 @@
 <?php
 wp_footer();
+//test2
 ?>
 <footer>
     <div class="footerinner wrapper align-center text-light">
