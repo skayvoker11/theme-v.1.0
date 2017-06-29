@@ -42,8 +42,6 @@ jQuery(document).ready(function($){
 
 //ВЫставляем картинку по размеру экрана пользователя
 var height = window.outerHeight;
-	console.log(height);
-
 $("#section-home .bxslider li").height(height);
 $("#section-home .bx-viewport").height(height);
 $("#section-home .bxslider li h1").addClass("slideInLeft");

@@ -838,3 +838,38 @@ textarea{
 #section-works .owl-carousel{
 	height: 300px;
 }
+.wrap-post {
+	overflow: hidden;
+
+}
+.post-item{
+	width: 33%;
+	float: left;
+	background: white;
+	text-align: center;
+	border-radius: 15px;
+}
+.wrap-post img{
+	width: 100%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	height: 300px;
+}
+.wrap-post .text-post{
+	padding: 20px 0;
+}
+.more-post a{
+	display: block;
+	padding: 15px 0;
+	background: black;
+	margin-top: 15px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	cursor: pointer;
+}
+.wrap-post .post-item:nth-child(2n){
+margin: 0 0.5%;
+}
