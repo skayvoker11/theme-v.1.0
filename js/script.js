@@ -108,6 +108,12 @@ $(window).scroll(function(){
 		jQuery('html, body').animate({scrollTop: 0}, 1000);
 		return false;						   
 	});
+
+	//Team func
+	$('.more-team').on('click',function(){
+		console.log('asd');
+		$(".overlay-all").css("display","block");
+	});
 	
 });
 
