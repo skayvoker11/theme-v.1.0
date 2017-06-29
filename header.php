@@ -4,6 +4,9 @@ wp_head();
 ?>
 <body>
 	<div class="preloader-2" id="page-preloader">
+		<div class="logo">
+			<a href="" class="logo-light"><img src="<?php echo get_template_directory_uri(); ?>/img/xone-logo-light.png" alt="logo"></a>
+		</div>
 		<div class="loader">
 			<span id="lol">0%</span>
 		</div>
@@ -13,8 +16,8 @@ wp_head();
 		<header class="header-abs">
 			<div class="header-inner wrapper clear">
 				<div class="logo">
-					<a href="" class="logo-light"><img src="img/xone-logo-light.png" alt="logo"></a>
-					<a href="" class="logo-dark"><img src="img/xone-logo.png" alt="logo"></a>
+					<a href="" class="logo-light"><img src="<?php echo get_template_directory_uri(); ?>/img/xone-logo-light.png" alt="logo"></a>
+					<a href="" class="logo-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/xone-logo.png" alt="logo"></a>
 				</div>
 				<nav>
 					<ul>

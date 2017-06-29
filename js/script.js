@@ -1,3 +1,5 @@
+
+//preloader on percent
 var 
 images = document.images,
 images_total_count = images.length,
