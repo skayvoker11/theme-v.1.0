@@ -42,3 +42,7 @@ function zzrt_load_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'zzrt_load_scripts');
+register_nav_menus(array(
+    'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
+    'bottom' => 'Нижнее меню'      //Название другого месторасположения меню в шаблоне
+    ));

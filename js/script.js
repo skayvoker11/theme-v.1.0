@@ -1,3 +1,5 @@
+
+//preloader on percent
 var 
 images = document.images,
 images_total_count = images.length,
@@ -40,8 +42,6 @@ jQuery(document).ready(function($){
 
 //ВЫставляем картинку по размеру экрана пользователя
 var height = window.outerHeight;
-	console.log(height);
-
 $("#section-home .bxslider li").height(height);
 $("#section-home .bx-viewport").height(height);
 $("#section-home .bxslider li h1").addClass("slideInLeft");
@@ -107,6 +107,12 @@ $(window).scroll(function(){
 		e.preventDefault();
 		jQuery('html, body').animate({scrollTop: 0}, 1000);
 		return false;						   
+	});
+
+	//Team func
+	$('.more-team').on('click',function(){
+		console.log('asd');
+		$(".overlay-all").css("display","block");
 	});
 	
 });
