@@ -23,8 +23,11 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 			</div>
 			<div class="wrap-post">
 				<?php foreach( $recent_posts as $recent ){ ?>
+				<?php 
+				$thumbnail = get_the_post_thumbnail($recent['ID'], 'medium');
+				?>
 				<div class="post-item">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/slider-bg1.jpg" alt="asd">
+					<?php echo $thumbnail; ?>
 					<h3 class="title-post"><?php echo $recent["post_title"]; ?></h3>
 					<div class="seperator size-small"><span></span></div>
 					<p class="text-post"><?php echo $recent["post_content"]; ?></p>
