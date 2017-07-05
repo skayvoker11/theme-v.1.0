@@ -1,6 +1,6 @@
 <?php
 wp_footer();
-
+//testing for pull
 ?>
 <footer>
     <div class="footerinner wrapper align-center text-light">
