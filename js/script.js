@@ -78,7 +78,7 @@ $(window).scroll(function(){
 		}
 
 	});
-	//$('#my-video').backgroundVideo();
+	$('#my-video').backgroundVideo();
 	jQuery('.filter li a').click(function(){
 
 		var parentul = jQuery(this).parents('ul.filter').data('related-grid');
