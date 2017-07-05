@@ -1,4 +1,18 @@
-<?php ?>
+<?php 
+$count = esc_attr(get_option('recent_posts'));   
+$args = array(
+	'numberposts' => $count,
+	'offset' => 0,
+	'category' => 0,
+	'orderby' => 'post_date',
+	'order' => 'DESC',
+	'post_type' => 'post',
+	'post_status' => 'publish',
+	'suppress_filters' => true );
+
+$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+?>
+
 <section id="post">
 	<div class="section-inner">
 		<div class="wrapper">
@@ -8,31 +22,20 @@
 				<h4 class="subtitle">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</h4>
 			</div>
 			<div class="wrap-post">
+				<?php foreach( $recent_posts as $recent ){ ?>
 				<div class="post-item">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/slider-bg1.jpg" alt="asd">
-					<h3 class="title-post">Name post</h3>
+					<h3 class="title-post"><?php echo $recent["post_title"]; ?></h3>
 					<div class="seperator size-small"><span></span></div>
-					<p class="text-post">Lorem Ipsum lorem ipsumLorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsumLorem Ipsum lorem ipsum</p>
+					<p class="text-post"><?php echo $recent["post_content"]; ?></p>
 					<div class="seperator size-small"><span></span></div>
-					<div class="more-post"><a href="">MORE</a></div>
+					<div class="more-post">
+						<a href="<?php echo get_post_permalink($recent['ID']); ?>">MORE</a>
+					</div>
 				</div>
-				<div class="post-item">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/slider-bg1.jpg" alt="asd">
-					<h3 class="title-post">Name post</h3>
-					<div class="seperator size-small"><span></span></div>
-					<p class="text-post">Lorem Ipsum lorem ipsumLorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsumLorem Ipsum lorem ipsum</p>
-					<div class="seperator size-small"><span></span></div>
-					<div class="more-post"><a href="">MORE</a></div>
-				</div>
-				<div class="post-item">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/slider-bg1.jpg" alt="asd">
-					<h3 class="title-post">Name post</h3>
-					<div class="seperator size-small"><span></span></div>
-					<p class="text-post">Lorem Ipsum lorem ipsumLorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsumLorem Ipsum lorem ipsum</p>
-					<div class="seperator size-small"><span></span></div>
-					<div class="more-post"><a href="">MORE</a></div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
 </section>
+

@@ -30,9 +30,13 @@ function zzrt_custom_settings()
     register_setting('zzrt-settings-group', 'video_link');
     register_setting('zzrt-settings-group', 'video_title');
     register_setting('zzrt-settings-group', 'video_desc');
+    register_setting('zzrt-settings-group', 'recent_posts');
 
     add_settings_section('zzrt-about-us-options', 'About Us', 'zzrt_create_about_us','zzrt_settings');
     add_settings_field('about-us-text', 'Info', 'zzrt_about_us_info', 'zzrt_settings', 'zzrt-about-us-options');
+
+    add_settings_section('zzrt-recent-posts-options', 'Recent posts', 'zzrt_create_recent_posts','zzrt_settings');
+    add_settings_field('recent-posts', 'Count', 'zzrt_count_of_recent_posts', 'zzrt_settings', 'zzrt-recent-posts-options');
 
     add_settings_section('zzrt-video-options', 'Video', 'zzrt_create_video_info','zzrt_settings');
     add_settings_field('video-link', 'Link', 'zzrt_video_link', 'zzrt_settings', 'zzrt-video-options');
@@ -87,6 +91,27 @@ function zzrt_about_us_info()
 {
     $about_us_info = esc_attr(get_option('about_us_info'));
     echo '<textarea rows="4" cols="120" name="about_us_info">' . $about_us_info . '</textarea>';
+}
+
+function zzrt_create_recent_posts()
+{
+
+}
+
+function zzrt_count_of_recent_posts()
+{
+    $count = esc_attr(get_option('recent_posts'));    
+    if($count == ''){
+        update_option( 'recent_posts', '3' );
+    } else {
+        if($count == '3'){
+            echo '<select  name="recent_posts"><option selected value="3">3</option><option value="6">6</option><option value="9">9</option></select>';
+        } elseif ($count == '6') {
+            echo '<select  name="recent_posts"><option value="3">3</option><option selected value="6">6</option><option value="9">9</option></select>';
+        } elseif ($count == '9') {
+            echo '<select  name="recent_posts"><option value="3">3</option><option value="6">6</option><option selected value="9">9</option></select>';
+        }
+    }    
 }
 
 function zzrt_create_video_info()
