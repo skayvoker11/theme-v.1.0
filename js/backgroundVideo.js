@@ -63,6 +63,7 @@
         function readyCallback() {
             me.options.originalVideoW = me.options.$video[0].videoWidth;
             me.options.originalVideoH = me.options.$video[0].videoHeight;
+
             if(me.initialised) {
                 return;
             }
@@ -172,7 +173,6 @@
 
             heightScale = this.options.$window.width() / this.options.originalVideoW;
             widthScale = this.options.$window.height() / this.options.originalVideoH;
-
             scaleFactor = heightScale > widthScale ? heightScale : widthScale;
 
             if (scaleFactor * this.options.originalVideoW < this.options.minimumVideoWidth) {
@@ -185,7 +185,7 @@
             return {
                 // Return x and y axis values for positioning
                 xPos: -(parseInt(this.options.$video.width() - this.options.$window.width()) / 2),
-                yPos: parseInt(this.options.$video.height() - this.options.$window.height()) / 2
+                yPos: parseInt(this.options.$video.height - this.options.$window.height) / 2
             };
 
         },
